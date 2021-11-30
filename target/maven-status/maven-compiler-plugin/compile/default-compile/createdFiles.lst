@@ -1,0 +1,16 @@
+com\example\repository\NewRepository.class
+com\example\repository\CategoryRepository.class
+com\example\Application.class
+com\example\dto\NewDTO.class
+com\example\entity\RoleEntity.class
+com\example\entity\CategoryEntity.class
+com\example\converter\NewConverter.class
+com\example\dto\BaseDTO.class
+com\example\service\INewService.class
+com\example\config\JpaAuditingConfig$AuditorAwareImpl.class
+com\example\config\JpaAuditingConfig.class
+com\example\entity\NewEntity.class
+com\example\entity\UserEntity.class
+com\example\entity\BaseEntity.class
+com\example\api\NewAPI.class
+com\example\service\impl\NewService.class
