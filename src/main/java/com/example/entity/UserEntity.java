@@ -1,17 +1,15 @@
 package com.example.entity;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
+@RequiredArgsConstructor
 public class UserEntity extends BaseEntity {
 	
 	@Column(name = "username")
@@ -27,13 +25,13 @@ public class UserEntity extends BaseEntity {
 	private String status;
 
 	
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private List<RoleEntity> roles = new ArrayList<>();
-    
+
 	public String getUserName() {
 		return userName;
 	}
@@ -73,6 +71,12 @@ public class UserEntity extends BaseEntity {
 	public void setRoles(List<RoleEntity> roles) {
 		this.roles = roles;
 	}
-	
-	
+
+	public UserEntity(String userName, String passWord, String fullName, String status, List<RoleEntity> roles) {
+		this.userName = userName;
+		this.passWord = passWord;
+		this.fullName = fullName;
+		this.status = status;
+		this.roles = roles;
+	}
 }

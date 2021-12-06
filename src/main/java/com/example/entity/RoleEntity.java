@@ -1,5 +1,7 @@
 package com.example.entity;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "role")
+@RequiredArgsConstructor
 public class RoleEntity extends BaseEntity {
 	
 	@Column(name = "code")
@@ -44,6 +47,8 @@ public class RoleEntity extends BaseEntity {
 	public void setUsers(List<UserEntity> users) {
 		this.users = users;
 	}
-	
-	
+
+	public RoleEntity(String name) {
+		this.name = name;
+	}
 }

@@ -20,32 +20,32 @@ import com.example.service.INewService;
 @RequestMapping("/api/new")
 public class NewAPI {
 
-	@Autowired
-	private INewService newService;
-	
-	@PostMapping()
-	public NewDTO createNew(@RequestBody NewDTO model) {
-		return newService.save(model);
-	}
-	
-	@PutMapping(value = "/{id}")
-	public NewDTO updateNew(@RequestBody NewDTO model, @PathVariable("id") Long id) {
-		model.setId(id);
-		return newService.save(model);
-	}
-	
-	@DeleteMapping()
-	public void deleteNew(@RequestBody long[] ids) {
-		newService.delete(ids);
-	}
+    @Autowired
+    private INewService newService;
 
-	@DeleteMapping(value = "/{id}")
-	public void deleteNew(@PathVariable("id") Long id){
-		newService.delete(id);
-	}
-	
-	@GetMapping()
-	public List<NewDTO> getAll(){
-		return newService.findAll();
-	}
+    @PostMapping()
+    public NewDTO createNew(@RequestBody NewDTO model) {
+        return newService.save(model);
+    }
+
+    @PutMapping(value = "/{id}")
+    public NewDTO updateNew(@RequestBody NewDTO model, @PathVariable("id") Long id) {
+        model.setId(id);
+        return newService.save(model);
+    }
+
+    @DeleteMapping()
+    public void deleteNew(@RequestBody long[] ids) {
+        newService.delete(ids);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void deleteNew(@PathVariable("id") Long id) {
+        newService.delete(id);
+    }
+
+    @GetMapping()
+    public List<NewDTO> getAll() {
+        return newService.findAll();
+    }
 }
