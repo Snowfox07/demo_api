@@ -36,18 +36,18 @@ public class UserAPI {
         return ResponseEntity.created(uri).body(userService.saveRoles(roleEntity));
     }
 
-    @PostMapping("/role/addtouser")
-    public ResponseEntity<?>addRoleToUser(@RequestBody RoleToUserForm form){
-        userService.addRoleToUser(form.getUserName(),form.getRoleName());
-        return ResponseEntity.ok().build();
-    }
+//    @PostMapping("/role/addtouser")
+//    public ResponseEntity<?>addRoleToUser(@RequestBody RoleToUserForm form){
+//        userService.addRoleToUser(form.getUserName(),form.getRoleName());
+//        return ResponseEntity.ok().build();
+//    }
 
 
 }
 
-@Data
-class RoleToUserForm {
-    private String userName;
-    private String roleName;
-
-}
+//@Data
+//class RoleToUserForm {
+//    private String userName;
+//    private String roleName;
+//
+//}
